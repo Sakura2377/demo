@@ -1,0 +1,45 @@
+<view>
+  <view class="more_title">
+    <view class="title_tips">我的地址</view>
+    <view class='more_btn' bindtap='goIncrease'>添加</view>
+  </view>
+  <!-- <view class="modular" wx:for="{{list}}"  data-id="{{item.id}}" bindtap='goModify'>
+    <view class="modular_left">
+      <view class='contact'>{{item.name}}，{{item.tel}}</view>
+      <view class='address'>{{item.address}}</view>
+    </view>
+    <image class='more_img' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+  </view> -->
+
+  <scroll-view scroll-y="true" class="history">
+
+    <view hidden="{{historyList.length !=0}}" class="no-data">
+      <view>暂无收获地址，请添加</view>
+    </view>
+
+    <view class="history-item" wx:for="{{historyList}}" wx:key="index">
+      <view class="history-item-wrap" style="transform:translateX({{item.x/2}}px);" data-index="{{index}}" bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend'>
+        <view class='item-nav'>
+          <view class="modular" bindtap='goModify' data-index='{{index}}'>
+            <view class="modular_left">
+              <view class='modular_left_top'>
+                <view class='contact'>{{item.consignee}} {{item.mobile}}</view>
+                <view class='is_default' wx:if="{{item.isDefault=='Y'}}">默认</view>
+              </view>
+              <view class='address'>{{item.address}}</view>
+            </view>
+            <view>
+              <image class='more_img' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="history-item-del" bindtap="del" data-index="{{index}}">
+        <text>删除</text>
+      </view>
+    </view>
+  </scroll-view>
+
+
+
+</view>

@@ -1,0 +1,121 @@
+<view class='top'>
+  <view class='banner'>
+    <image class='my_banner' src='{{webImg}}/images/modular/tbfw/user/my_banner.png' mode="widthFix"></image>
+    <view class='my_message'>
+      <view class='my_photo'>
+        <image src="{{character.portraitImg?character.portraitImg:user.avatarUrl}}" mode="widthFix"></image>
+      </view>
+      <view class="my_msg">
+        <view class="info">
+          <view class="my_name">{{character.name ? character.name:ziti.shiming}}</view>
+          <view class='my_tel'>({{character.mobile? character.mobile:ziti.bangding}})</view>
+        </view>
+
+
+      <view class="cdBox">
+        <!-- 签到领积分 -->
+        <view class="cd" bindtap='goAttendance'>
+          <image src="{{webImg}}/images/integral/qiand.png" />
+          <view class="in">{{ziti.qiandao}}</view>
+        </view>
+        <!-- 上报当前地址 -->
+        <view class="cd" bindtap='goLocation'>
+          <image src="https://zwfw.pingtanii.com/static/images/miniapp/location.png" class="cdImg"/>
+          <view class="in">{{ziti.shangbao}}</view>
+        </view>
+      </view>
+
+
+
+          <view >
+            <view class="gr" wx:if="{{testT}}">个人信用分：650</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='nav'>
+  <view class='nav_msg'>
+    <view class='nav_title'>{{ziti.touxiang}}</view>
+    <view class="more_btn">
+      <image class='photo' src="{{character.portraitImg?character.portraitImg:user.avatarUrl}}"></image>
+      <!-- <image class='more'  bindtap="goPhoto" src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image> -->
+    </view>
+  </view>
+  <!-- <view class='nav_msg' bindtap="goName">
+    <view class='nav_title'>{{ziti.nicheng}}</view>
+    <view class="more_btn">
+      <view class="nav_name">{{character.nickname}}</view>
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view> -->
+  <view class='nav_msg' bindtap="goMessage">
+    <view class='nav_title'>{{ziti.xiaoxi}}</view>
+    <view class="more_btn">
+      <view wx:if="{{MsgCount>0}}" class="msg_tip">{{MsgCount}}</view>
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- <view class='nav_msg' bindtap="goMmdifySign">
+    <view class='nav_title'>{{ziti.gexinqianming}}</view>
+    <view class="more_btn">
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view> -->
+  <view class='nav_msg' bindtap="goFeedback">
+    <view class='nav_title'>{{ziti.myFeedback}}</view>
+    <view class="more_btn">
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view>
+  <view class='nav_msg' bindtap="goZz">
+    <view class='nav_title'>{{ziti.wodezhengzhao}}</view>
+    <view class="more_btn">
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view>
+  <view class='nav_msg' bindtap="goPhone">
+    <view class='nav_title'>{{ziti.lianxifangshi}}</view>
+    <view class="more_btn">
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view>
+
+
+
+  <!-- 联系地址 -->
+  <view class='nav_msg' bindtap="goAddres">
+    <view class='nav_title'>{{ziti.dizhi}}</view>
+    <view class="more_btn">
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view>
+
+
+
+
+  <view class='nav_msg' bindtap="goInte">
+    <view class='nav_title'>{{ziti.myInte}}</view>
+    <view class="more_btn">
+      <view class="integral">{{integral}}</view>
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- <view class='nav_msg' bindtap="goEwm">
+    <view class='nav_title'>二维码</view>
+    <view class="more_btn">
+      <image class='ewm' src='{{webImg}}/images/modular/tbfw/user/user08.png'></image>
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view> -->
+  <!-- <view class='nav_msg' bindtap="goMore">
+    <view class='nav_title'>更多</view>
+    <view class="more_btn">
+      <image class='more' src='{{webImg}}/images/modular/tbfw/user/user07.png' mode="widthFix"></image>
+    </view>
+  </view> -->
+</view>
+<view class="question_btn_box">
+  <view class='question_btn' bindtap="goQuestion">{{ziti.tuichu}}</view>
+</view>
+
